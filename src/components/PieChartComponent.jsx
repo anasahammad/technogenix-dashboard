@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { PieChart, Pie, Sector, Cell, Legend, ResponsiveContainer, Tooltip } from 'recharts';
 import { FaGraduationCap } from 'react-icons/fa'; // Importing a react icon from react-icons
+import useTheme from '../hooks/useTheme';
 
 const data = [
   { name: 'Facebook', value: 33, color: '#9B52E1' },
@@ -51,14 +52,14 @@ const renderActiveShape = (props) => {
 
 const CustomActiveShapePieChart = () => {
   const [activeIndex, setActiveIndex] = useState(0);
-
+  const {theme} = useTheme()
   const onPieEnter = (_, index) => {
     setActiveIndex(index);
   };
 
   return (
-    <div style={{ position: 'relative', width: '100%', height: '300px' }}>
-      <ResponsiveContainer width="100%" height={300}>
+    <div style={{ position: 'relative', width: '100%', height: '400px' }}>
+      <ResponsiveContainer width="100%" height={400}>
         <PieChart>
           <Pie
             activeIndex={activeIndex}
@@ -77,16 +78,16 @@ const CustomActiveShapePieChart = () => {
             ))}
           </Pie>
           <Tooltip/>
-          <Legend verticalAlign="top" align="right" iconType="circle" iconSize={10} wrapperStyle={{ paddingTop: 10 }} />
+          <Legend verticalAlign="bottom" align="left" iconType="circle" iconSize={10} wrapperStyle={{ paddingTop: 5 }} />
         </PieChart>
       </ResponsiveContainer>
       <div style={{
         position: 'absolute', 
-        top: '60%', 
+        top: '43%', 
         left: '50%',
         border: '1px solid',
         padding: "16px",
-        background: "gray",
+        background: theme === 'dark' ? 'gray' : '#60CDF6',
         borderRadius: "100%",
         transform: 'translate(-50%, -50%)', 
         fontSize: '3rem', 
