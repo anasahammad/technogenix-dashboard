@@ -14,7 +14,7 @@ function App() {
     setSideCollaps(!sideCollaps)
   }
   return (
-    <div className="flex  bg-gray-100">
+    <div className="flex dark:bg-black ">
     <Sidebar sideCollaps={sideCollaps} />
 
     {/* Main Content */}

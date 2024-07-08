@@ -117,7 +117,7 @@ const Sidebar = ({sideCollaps}) => {
 
     ]
     return (
-        <aside className={`w-64 bg-white shadow-lg ${sideCollaps ? 'w-64' : 'w-16'}`}>
+        <aside className={`w-64  shadow-lg ${sideCollaps ? 'w-64' : 'w-16'}`}>
         <div className="p-2 bg-[#E6498C] text-white">
           <div className={`  ${sideCollaps ? 'flex justify-center items-center gap-2' : 'hidden'}`}>
                 <div className=" rounded-full bg-orange-400 p-4 text-center"><RiStickyNote2Line className="w-full"/></div>
@@ -128,8 +128,8 @@ const Sidebar = ({sideCollaps}) => {
             
             {links.map((link, idx)=> (
                 <li key={idx} className="p-2">
-                <a href="#" className="text-gray-500 hover:bg-gray-200 hover:text-green-500 active:text-green-600 rounded-lg  p-2 flex items-center gap-2 ">
-                  <span className={`text-center ${sideCollaps ? 'text-xl ' : ' text-2xl'} `}>{link.icon}</span>
+                <a href="#" className=" hover:bg-gray-200 hover:text-green-500 active:text-green-600 rounded-lg  p-2 flex items-center gap-2 ">
+                  <span className={`text-center ${sideCollaps ? 'text-xl ' : ' text-2xl '} `}>{link.icon}</span>
                   <span className={`font-semibold ${sideCollaps ? 'block ' : 'hidden'}`}>{link.title}</span>
                 </a>
               </li>
