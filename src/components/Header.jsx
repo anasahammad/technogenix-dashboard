@@ -1,22 +1,17 @@
+import { FaBars } from "react-icons/fa6";
 import { IoMdNotificationsOutline } from "react-icons/io";
 import { IoSettingsOutline } from "react-icons/io5";
-import { MdNotificationAdd, MdOutlineTextsms } from "react-icons/md";
+import {  MdOutlineEmail } from "react-icons/md";
 
 
-const Header = () => {
+const Header = ({toggleSideBar}) => {
     return (
         <div className="w-full h-16 bg-white shadow-md flex items-center justify-between px-4">
-        <div className="text-2xl font-bold text-gray-700">
-          Dashboard
+        <div onClick={toggleSideBar} className="text-2xl cursor-pointer font-bold text-gray-700">
+        <FaBars  />
         </div>
         <div className="flex items-center space-x-4">
-          {/* <div className="relative">
-            <input
-              type="text"
-              placeholder="Search..."
-              className="input input-bordered"
-            />
-          </div> */}
+        
           <div className="relative">
             <button className="btn btn-ghost btn-circle">
             
@@ -28,7 +23,8 @@ const Header = () => {
           <div className="relative">
             <button className="btn btn-ghost btn-circle">
             
-<MdOutlineTextsms className="h-5 w-5" />
+
+<MdOutlineEmail className="h-5 w-5"/>
             </button>
             
             <span className="absolute top-3 right-3 badge badge-xs badge-error indicator-item"></span>
