@@ -1,22 +1,17 @@
-import { useEffect, useState } from "react";
+
 import { FaBars } from "react-icons/fa6";
 import { IoMdNotificationsOutline } from "react-icons/io";
 import { IoSettingsOutline } from "react-icons/io5";
 import {  MdOutlineEmail } from "react-icons/md";
+import useTheme from "../hooks/useTheme";
 
 
 const Header = ({toggleSideBar}) => {
- const [theme, setTheme] = useState(localStorage.getItem('theme') || 'light')
-    
-useEffect(()=>{
-    const localTheme = localStorage.getItem('theme')
-    document.querySelector('html').setAttribute("data-theme", localTheme)
-}, [theme])
-
+const {theme, setTheme} = useTheme()
  
     return (
-        <div className="w-full h-16 bg-white shadow-md flex items-center justify-between px-4">
-        <div onClick={toggleSideBar} className="text-2xl cursor-pointer font-bold text-gray-700">
+        <div className="w-full h-16  shadow-md flex items-center justify-between px-4">
+        <div onClick={toggleSideBar} className={`text-2xl cursor-pointer font-bold  ${theme === 'dark'? 'text-white': 'text-gray-700'}`}>
         <FaBars  />
         </div>
         <div className="flex items-center space-x-4">
@@ -46,12 +41,12 @@ useEffect(()=>{
             </button>
             
           </div>
-          <div className="dropdown dropdown-end">
+          <div className="dropdown dropdown-end ">
             <button className="btn btn-ghost btn-circle">
             
 <IoSettingsOutline className="h-5 w-5" />
             </button>
-            <ul className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
+            <ul className="menu menu-compact dropdown-content mt-3 p-2 shadow z-10 bg-base-100 rounded-box w-52">
               <li><button onClick={()=> {setTheme("dark")
                 localStorage.setItem("theme", "dark")
               }}>Dark Mode</button></li>

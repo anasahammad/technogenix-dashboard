@@ -24,8 +24,7 @@ function App() {
 
       {/* Main Content Area */}
       <main className="flex-1 p-6">
-        <h2 className="text-xl font-semibold mb-4">Welcome to the Dashboard</h2>
-        <p className="text-gray-700">This is the main content area.</p>
+        <Dashboard/>
       </main>
     </div>
   </div>

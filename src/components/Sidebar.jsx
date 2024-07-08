@@ -9,10 +9,11 @@ import { IoCartSharp, IoDocumentTextOutline } from "react-icons/io5";
 import { LuListTodo } from "react-icons/lu";
 import { MdEmail, MdLocationPin, MdNotificationAdd, MdOutlineWidgets } from "react-icons/md";
 import { RiStickyNote2Line, RiUserSharedFill } from "react-icons/ri";
+import useTheme from "../hooks/useTheme";
 
 
 const Sidebar = ({sideCollaps}) => {
-
+    const {theme} = useTheme()
     const links = [
         {
             title: "Overview",
@@ -117,7 +118,7 @@ const Sidebar = ({sideCollaps}) => {
 
     ]
     return (
-        <aside className={`w-64  shadow-lg ${sideCollaps ? 'w-64' : 'w-16'}`}>
+        <aside className={`  shadow-lg ${ sideCollaps ? 'w-64' : 'w-16'}`}>
         <div className="p-2 bg-[#E6498C] text-white">
           <div className={`  ${sideCollaps ? 'flex justify-center items-center gap-2' : 'hidden'}`}>
                 <div className=" rounded-full bg-orange-400 p-4 text-center"><RiStickyNote2Line className="w-full"/></div>
@@ -128,7 +129,7 @@ const Sidebar = ({sideCollaps}) => {
             
             {links.map((link, idx)=> (
                 <li key={idx} className="p-2">
-                <a href="#" className=" hover:bg-gray-200 hover:text-green-500 active:text-green-600 rounded-lg  p-2 flex items-center gap-2 ">
+                <a href="#" className={`hover:bg-gray-200 hover:text-green-500 active:text-green-600 rounded-lg  p-2 flex items-center gap-2 ${theme === 'dark' ? 'text-white': 'text-gray-600'}`}>
                   <span className={`text-center ${sideCollaps ? 'text-xl ' : ' text-2xl '} `}>{link.icon}</span>
                   <span className={`font-semibold ${sideCollaps ? 'block ' : 'hidden'}`}>{link.title}</span>
                 </a>
