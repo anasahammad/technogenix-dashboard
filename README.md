@@ -1,8 +1,23 @@
-# React + Vite
+# Dashboard Project
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This project is a task assigned by Technogenix Solutions. The objective was to create a dashboard using React.js and Tailwind CSS, incorporating line and pie charts using the Recharts library, along with a theme controller to toggle between dark and light modes.
 
-Currently, two official plugins are available:
+## Live Demo
+Check out the live demo of the project [https://technogenix-dashboard-by-anas.netlify.app/](#).
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Features
+- **Line Chart**: Displays data trends over time.
+- **Pie Chart**: Represents data distribution in a pie format.
+- **Theme Controller**: Allows users to switch between dark and light modes.
+
+## Technologies Used
+- **React.js**: A JavaScript library for building user interfaces.
+- **Tailwind CSS**: A utility-first CSS framework for rapid UI development.
+- **Recharts**: A composable charting library built on React components.
+
+## Installation
+
+1. **Clone the repository:**
+   ```sh
+   git clone https://github.com/anasahammad/technogenix-dashboard
+   cd technogenix-dashboard
