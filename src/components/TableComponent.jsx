@@ -29,21 +29,21 @@ const tableData = [
   ];
 const TableComponent = () => {
     return (
-        <div className="flex gap-6">
+        <div className="flex flex-col md:flex-row gap-6">
             {/* left section */}
-            <div className="shadow-lg border p-6 rounded-lg w-[35%]">
+            <div className="shadow-2xl  p-6 rounded-lg md:w-[35%]">
                 <h4 className=" font-bold">Recent Activities</h4>
 
                 {
                     activities.map((activity, idx)=> (
-                        <div key={idx} className="flex my-12 gap-6 items-center ">
+                        <div key={idx} className="flex  my-12  items-center justify-between">
                     <p>{activity.time}</p>
-                    <div className="flex justify-center  items-center gap-6">
+                    <div className="flex p-4 md:w-72  justify-center  items-center gap-6">
                         <div className={`text-3xl  text-white p-2 rounded-full ${activity.iconBg}`}>
                         {activity.icon}
                         </div>
 
-                        <div>
+                        <div className="">
                             <h2 className="text-xl font-semibold">{activity.title}</h2>
                             <p>{activity.description}</p>
                         </div>
@@ -55,12 +55,12 @@ const TableComponent = () => {
 
             {/* Right Section */}
             
-            <div className="border p-6 rounded-lg w-[65%]">
+            <div className=" p-6 shadow-2xl rounded-lg md:w-[65%]">
             <h4 className=" font-bold">Order Status</h4>
             <p>Overview of latest month</p>
 
             <div>
-            <div className="flex my-6 justify-between items-center">
+            <div className="flex flex-col md:flex-row gap-4 my-6 justify-between md:items-center">
                     <div className="flex gap-3">
                    
                     
@@ -85,7 +85,7 @@ const TableComponent = () => {
             {/* Table */}
 
                 <div className=" py-6 w-full  overflow-x-auto">
-                <table className="table  ">
+                <table className="table  overflow-x-auto">
                 <thead>
           <tr className=" ">
             <th className="text-[16px] font-semibold">INVOICE</th>

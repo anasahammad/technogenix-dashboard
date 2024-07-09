@@ -58,7 +58,7 @@ const CustomActiveShapePieChart = () => {
   };
 
   return (
-    <div style={{ position: 'relative', width: '100%', height: '400px' }}>
+    <div style={{ position: 'relative' }}>
       <ResponsiveContainer width="100%" height={400}>
         <PieChart>
           <Pie
@@ -93,7 +93,7 @@ const CustomActiveShapePieChart = () => {
         fontSize: '3rem', 
         // Color for the React icon
       }}>
-        <FaGraduationCap />
+      <FaGraduationCap className="text-white"/>
       </div>
     </div>
   );

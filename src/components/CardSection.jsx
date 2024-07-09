@@ -5,7 +5,7 @@ import { PiEqualizerThin } from "react-icons/pi";
 const CardSection = () => {
     return (
         <div className="my-6">
-            <div className="grid grid-cols-4 gap-2  ">
+            <div className="grid grid-cols-1 md:grid-cols-4 gap-2  ">
                      {/* Card 1 */}
                     <div className=" rounded-2xl py-8  px-4   
                     bg-gradient-to-r from-purple-500 to-pink-500 text-white">

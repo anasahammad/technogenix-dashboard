@@ -19,10 +19,10 @@ const Dashboard = () => {
     return (
         <div>
           {/* Dashboard Top Section */}
-            <div className=" flex w-full gap-5">
+            <div className=" flex flex-col md:flex-row w-full gap-5">
               {/* Line chart  */}
-                <div className="w-[75%] flex flex-col gap-2">
-                      <div className=" flex gap-1  shadow-md rounded-lg p-8">
+                <div className="md:w-[75%] flex flex-col gap-2">
+                      <div className=" flex flex-col-reverse md:flex-row gap-1  shadow-md rounded-lg p-8">
                       <div className=" flex flex-col space-y-6 ">
                         <div>
                         <h5 className="text-xl font-semibold">Dashboard</h5>
@@ -42,12 +42,12 @@ const Dashboard = () => {
             </div>
                       </div>
                     
-                   <div className="flex-1 ">
+                   <div className="md:flex-1 ">
                    <LineChartComponent/>
                    </div>
                       </div>
                    
-                   <div className="grid grid-cols-4 p-4 shadow-md rounded-lg">
+                   <div className="grid grid-cols-2 gap-4 md:gap-0 md:grid-cols-4 p-4 shadow-md rounded-lg">
 
                         <div className="flex items-center gap-3">
                             <div className="text-3xl bg-[#E95B7B] text-white p-4 rounded-full">
@@ -98,7 +98,7 @@ const Dashboard = () => {
 
                 {/* Pie Chart */}
 
-                <div className="w-[25%] shadow-md p-4 rounded-lg">
+                <div className="md:w-[25%] shadow-md p-4 rounded-lg">
                   <h3 className="text-xl">Traffic</h3>
                   <PieChartComponent/>
 
