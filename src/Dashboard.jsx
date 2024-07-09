@@ -5,6 +5,7 @@ import useTheme from "./hooks/useTheme";
 import { FaWallet } from "react-icons/fa";
 import { FaRegCircleCheck } from "react-icons/fa6";
 import CardSection from "./components/CardSection";
+import TableComponent from "./components/TableComponent";
 
 
 const activites = [
@@ -109,7 +110,7 @@ const Dashboard = () => {
             {/* card section */}
             <CardSection/>
             {/* Dashboard Table Section */}
-
+                <TableComponent/>
             <div>
 
             </div>
