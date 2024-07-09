@@ -3,8 +3,16 @@ import LineChartComponent from "./components/LineChartComponent";
 import PieChartComponent from "./components/PieChartComponent";
 import useTheme from "./hooks/useTheme";
 import { FaWallet } from "react-icons/fa";
+import { FaRegCircleCheck } from "react-icons/fa6";
+import CardSection from "./components/CardSection";
 
 
+const activites = [
+  {
+    time: "40 Mins",
+    icon: <FaRegCircleCheck />
+  }
+]
 const Dashboard = () => {
   const {theme} = useTheme()
     return (
@@ -96,6 +104,14 @@ const Dashboard = () => {
                  
                   
                 </div>
+            </div>
+
+            {/* card section */}
+            <CardSection/>
+            {/* Dashboard Table Section */}
+
+            <div>
+
             </div>
         </div>
     );
