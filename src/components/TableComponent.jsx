@@ -1,6 +1,9 @@
-import { FaComments, FaHandshake } from "react-icons/fa";
+import { FaAngleLeft, FaAngleRight, FaComments, FaFile, FaHandshake, FaTrash } from "react-icons/fa";
+import { FaCircleExclamation } from "react-icons/fa6";
 import { IoCheckmarkCircleOutline, IoNewspaperOutline } from "react-icons/io5";
+import { LuAlarmPlus } from "react-icons/lu";
 import { TiAnchorOutline } from "react-icons/ti";
+import TableRow from "./TableRow";
 
 
 
@@ -15,18 +18,27 @@ const activities = [
 
     {time: "1 Day ago", icon: <FaComments />, title: "Replied Comment", description: "Fanshi Added a Comment", iconBg : 'bg-green-500'},
 ]
+
+
+const tableData = [
+    { invoice: '12386', customer: 'Charly dues', from: 'Russia', price: '$2652', status: 'Process' },
+    { invoice: '12386', customer: 'Charly dues', from: 'Russia', price: '$2652', status: 'Open' },
+    { invoice: '12386', customer: 'Charly dues', from: 'Russia', price: '$2652', status: 'On Hold' },
+    { invoice: '12386', customer: 'Charly dues', from: 'Russia', price: '$2652', status: 'Process' },
+    { invoice: '12386', customer: 'Charly dues', from: 'Russia', price: '$2652', status: 'Open' },
+  ];
 const TableComponent = () => {
     return (
-        <div className="flex ">
+        <div className="flex gap-6">
             {/* left section */}
-            <div className="shadow-lg border p-6 rounded-lg">
+            <div className="shadow-lg border p-6 rounded-lg w-[35%]">
                 <h4 className=" font-bold">Recent Activities</h4>
 
                 {
                     activities.map((activity, idx)=> (
                         <div key={idx} className="flex my-12 gap-6 items-center ">
                     <p>{activity.time}</p>
-                    <div className="flex justify-center items-center gap-6">
+                    <div className="flex justify-center  items-center gap-6">
                         <div className={`text-3xl  text-white p-2 rounded-full ${activity.iconBg}`}>
                         {activity.icon}
                         </div>
@@ -40,6 +52,75 @@ const TableComponent = () => {
                     ))
                 }
             </div>
+
+            {/* Right Section */}
+            
+            <div className="border p-6 rounded-lg w-[65%]">
+            <h4 className=" font-bold">Order Status</h4>
+            <p>Overview of latest month</p>
+
+            <div>
+            <div className="flex my-6 justify-between items-center">
+                    <div className="flex gap-3">
+                   
+                    
+                        <button className="bg-red-500 p-2 rounded-xl text-xl flex items-center gap-2 text-white"> <LuAlarmPlus/>  Add</button>
+                           
+                        <button className="bg-gray-700 p-4 rounded-xl text-xl flex items-center gap-2 text-white"> <FaTrash /> </button>
+
+                        <button className="bg-gray-700 p-4 rounded-xl text-xl flex items-center gap-2 text-white"> <FaCircleExclamation /> </button>
+
+                        <button className="bg-gray-700 p-4 rounded-xl text-xl flex items-center gap-2 text-white"> <FaFile /></button>
+                           
+                  
+                    </div>
+
+                    <div className="flex gap-3 items-center">
+          <input className="bg-gray-700 p-4 rounded-lg text-white" type="text" placeholder="Search" />
+          <button className="bg-gray-700 p-4 rounded-xl text-xl flex items-center gap-2 text-white"> <FaFile /></button>
+        </div>
+                </div>
+            </div>
+
+            {/* Table */}
+
+                <div className=" py-6 w-full  overflow-x-auto">
+                <table className="table  ">
+                <thead>
+          <tr className=" ">
+            <th className="text-[16px] font-semibold">INVOICE</th>
+            <th className="text-[16px] font-semibold">CUSTOMERS</th>
+            <th className="text-[16px] font-semibold">FROM</th>
+            <th className="text-[16px] font-semibold">PRICE</th>
+            <th className="text-[16px] text-center font-semibold">STATUS</th>
+          </tr>
+        </thead>
+        <tbody>
+          {tableData.map((item, index) => (
+            <TableRow key={index} {...item} />
+          ))}
+        </tbody>
+                </table>
+                <div className="flex justify-between items-center mt-4">
+        <p className="text-gray-500">Showing 1 to 20 entries</p>
+        <div className="flex items-center">
+          <button className="  mr-2">
+          <FaAngleLeft />
+          </button>
+          {[1, 2, 3, 4, 5, 6].map((number) => (
+            <button key={number} className={`p-1  rounded-full mx-1 ${number === 2 ? 'bg-red-500 text-white w-8 h-8' : ''} `}>
+              {number}
+            </button>
+          ))}
+          <button className="  ml-2">
+          <FaAngleRight />
+          </button>
+        </div>
+        </div>
+                </div>
+            </div>
+
+                
         </div>
     );
 };
