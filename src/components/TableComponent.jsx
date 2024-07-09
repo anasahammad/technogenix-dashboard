@@ -31,7 +31,7 @@ const TableComponent = () => {
     return (
         <div className="flex flex-col md:flex-row gap-6">
             {/* left section */}
-            <div className="shadow-2xl  p-6 rounded-lg md:w-[35%]">
+            <div className="shadow-md  p-6 rounded-lg md:w-[35%]">
                 <h4 className=" font-bold">Recent Activities</h4>
 
                 {
@@ -55,7 +55,7 @@ const TableComponent = () => {
 
             {/* Right Section */}
             
-            <div className=" p-6 shadow-2xl rounded-lg md:w-[65%]">
+            <div className=" p-6 shadow-md rounded-lg md:w-[65%]">
             <h4 className=" font-bold">Order Status</h4>
             <p>Overview of latest month</p>
 
@@ -85,7 +85,7 @@ const TableComponent = () => {
             {/* Table */}
 
                 <div className=" py-6 w-full  overflow-x-auto">
-                <table className="table  overflow-x-auto">
+                <table className="table  overflow-auto">
                 <thead>
           <tr className=" ">
             <th className="text-[16px] font-semibold">INVOICE</th>
